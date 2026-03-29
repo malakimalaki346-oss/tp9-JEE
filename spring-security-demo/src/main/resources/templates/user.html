@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Espace Utilisateur</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #28a745;
+        }
+        .btn-back {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .info-card {
+            background: #e8f4f8;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>👤 Espace Utilisateur</h1>
+    <p>Bienvenue <strong sec:authentication="name"></strong> !</p>
+
+    <div class="info-card">
+        <h3>📌 Informations personnelles</h3>
+        <p>Cette page est réservée aux utilisateurs authentifiés avec le rôle USER ou ADMIN.</p>
+        <p>Vous avez accès à :</p>
+        <ul>
+            <li>Vos informations personnelles</li>
+            <li>Paramètres du compte</li>
+            <li>Historique des connexions</li>
+        </ul>
+    </div>
+
+    <a href="/home" class="btn-back">← Retour à l'accueil</a>
+</div>
+</body>
+</html>
